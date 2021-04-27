@@ -6,7 +6,7 @@ import 'package:covid_resources/data/rest_apis/apis.dart';
 enum ResourceEvent { FetchNewResource }
 
 class ResourceBloc {
-  final _resDataStreamController = StreamController<List<ResourceData>>();
+  final _resDataStreamController = StreamController<List<ResourceData>>.broadcast();
 
   StreamSink<List<ResourceData>> get _resDataSink => _resDataStreamController.sink;
 

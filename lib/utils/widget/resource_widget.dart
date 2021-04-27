@@ -1,8 +1,9 @@
 import 'package:covid_resources/data/model/resource.dart';
 import 'package:covid_resources/utils/colors.dart';
-import 'package:covid_resources/utils/common_utits.dart';
+import 'package:covid_resources/utils/common_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share/share.dart';
 
 class ResourceWidget extends StatelessWidget {
   final ResourceData resourceData;
@@ -70,7 +71,9 @@ class ResourceWidget extends StatelessWidget {
                         text: TextSpan(children: <TextSpan>[
                           TextSpan(text: "Phone: ", style: GoogleFonts.poppins(fontSize: 18, color: colors[0])),
                           TextSpan(
-                              text: resourceData.phone, style: GoogleFonts.poppins(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600)),
+                            text: resourceData.phone,
+                            style: GoogleFonts.poppins(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600),
+                          ),
                         ]),
                       ),
                     ),
@@ -85,9 +88,9 @@ class ResourceWidget extends StatelessWidget {
               child: RichText(
                 textAlign: TextAlign.start,
                 text: TextSpan(children: <TextSpan>[
-                  TextSpan(text: "More Details\n", style: GoogleFonts.poppins(fontSize: 18, color: colors[0])),
+                  TextSpan(text: "More Details\n", style: GoogleFonts.poppins(fontSize: 16, color: colors[0])),
                   TextSpan(
-                      text: resourceData.description, style: GoogleFonts.poppins(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400)),
+                      text: resourceData.description, style: GoogleFonts.poppins(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400)),
                 ]),
               ),
             ),
@@ -118,7 +121,11 @@ class ResourceWidget extends StatelessWidget {
                 flex: 1,
                 child: MaterialButton(
                   shape: CircleBorder(side: BorderSide(width: 2, color: colors[1], style: BorderStyle.solid)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Share.share(
+                      'COVID Help Details\n\n${resourceData.type}\n${resourceData.name}\n${resourceData.phone}\n${resourceData.city}\n${resourceData.description}\n${resourceData.address}',
+                    );
+                  },
                   child: Icon(
                     Icons.share_rounded,
                     size: 18,

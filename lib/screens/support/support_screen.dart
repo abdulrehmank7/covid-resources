@@ -5,14 +5,12 @@ import 'package:covid_resources/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class AddInfoScreen extends StatefulWidget {
-  static const id = "add_info_screen";
-
+class SupportScreen extends StatefulWidget {
   @override
-  _AddInfoScreenState createState() => _AddInfoScreenState();
+  _SupportScreenState createState() => _SupportScreenState();
 }
 
-class _AddInfoScreenState extends State<AddInfoScreen> {
+class _SupportScreenState extends State<SupportScreen> {
   bool isWebViewLoading = true;
 
   @override
@@ -29,7 +27,7 @@ class _AddInfoScreenState extends State<AddInfoScreen> {
         child: Stack(
           children: [
             WebView(
-              initialUrl: ADD_DATA_URL,
+              initialUrl: SUPPORT_URL,
               javascriptMode: JavascriptMode.unrestricted,
               onPageFinished: (value) {
                 setState(() {

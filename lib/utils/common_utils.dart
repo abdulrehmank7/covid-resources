@@ -1,5 +1,8 @@
 import 'package:covid_resources/screens/add_info/add_info_screen.dart';
+import 'package:covid_resources/screens/disclaimer/disclaimer_screen.dart';
 import 'package:covid_resources/screens/home/home_screen.dart';
+import 'package:covid_resources/screens/support/support_screen.dart';
+import 'package:covid_resources/utils/colors.dart';
 import 'package:covid_resources/utils/screen_animation_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:timeago/timeago.dart' as timeago;
@@ -22,9 +25,16 @@ BottomNavigationBar getBottomNav(BuildContext context) {
         icon: Icon(Icons.support_rounded),
         label: 'Support Us',
       ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.report_gmailerrorred_rounded),
+        label: 'Disclaimer',
+      ),
     ],
     currentIndex: navSelectedIndex,
-    selectedItemColor: Colors.amber[800],
+    backgroundColor: Colors.white,
+    selectedItemColor: resPurple1,
+    unselectedItemColor: resPurple2,
+    type: BottomNavigationBarType.fixed,
     onTap: (index) {
       onBottomNavClicked(context, index);
     },
@@ -39,6 +49,12 @@ onBottomNavClicked(BuildContext context, int index) {
       break;
     case 1:
       Navigator.of(context).push(fadeScreenTransition(AddInfoScreen()));
+      break;
+    case 2:
+      Navigator.of(context).push(fadeScreenTransition(SupportScreen()));
+      break;
+    case 3:
+      Navigator.of(context).push(fadeScreenTransition(DisclaimerScreen()));
       break;
   }
 }
