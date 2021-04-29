@@ -6,7 +6,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="Covid Resources"
+        android:label="Covid Care"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
