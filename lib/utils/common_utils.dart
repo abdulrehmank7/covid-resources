@@ -32,8 +32,8 @@ BottomNavigationBar getBottomNav(BuildContext context) {
     ],
     currentIndex: navSelectedIndex,
     backgroundColor: Colors.white,
-    selectedItemColor: resPurple1,
-    unselectedItemColor: resPurple2,
+    selectedItemColor: secondaryColor,
+    unselectedItemColor: primaryColor,
     type: BottomNavigationBarType.fixed,
     onTap: (index) {
       onBottomNavClicked(context, index);

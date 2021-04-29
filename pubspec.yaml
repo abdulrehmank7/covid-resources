@@ -23,8 +23,19 @@ dependencies:
   share: ^2.0.1
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.9.0
+
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  image_path_android: "assets/logo/ic_launcher.png"
+  image_path_ios: "assets/logo/logo_main.png"
+  android: true
+  ios: true
+  adaptive_icon_background: "assets/logo/ic_logo_bg.png" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "assets/logo/ic_logo_foreground.png" # only available for Android 8.0 devices and above
+
 
 # The following section is specific to Flutter.
 flutter:

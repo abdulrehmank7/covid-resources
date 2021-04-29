@@ -55,16 +55,30 @@ class ResourceWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12, bottom: 4),
-                      child: RichText(
-                        text: TextSpan(children: <TextSpan>[
-                          TextSpan(text: "City: ", style: GoogleFonts.poppins(fontSize: 18, color: colors[0])),
-                          TextSpan(
-                              text: resourceData.city, style: GoogleFonts.poppins(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600)),
-                        ]),
+                    if (resourceData.city.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12, bottom: 4),
+                        child: RichText(
+                          text: TextSpan(children: <TextSpan>[
+                            TextSpan(text: "City: ", style: GoogleFonts.poppins(fontSize: 18, color: colors[0])),
+                            TextSpan(
+                                text: resourceData.city, style: GoogleFonts.poppins(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600)),
+                          ]),
+                        ),
                       ),
-                    ),
+                    if (resourceData.state.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12, bottom: 4),
+                        child: RichText(
+                          text: TextSpan(children: <TextSpan>[
+                            TextSpan(text: "State: ", style: GoogleFonts.poppins(fontSize: 18, color: colors[0])),
+                            TextSpan(
+                              text: resourceData.state,
+                              style: GoogleFonts.poppins(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600),
+                            ),
+                          ]),
+                        ),
+                      ),
                     Padding(
                       padding: const EdgeInsets.only(left: 12, bottom: 4),
                       child: RichText(
@@ -158,9 +172,9 @@ class ResourceWidget extends StatelessWidget {
 List<Color> _getResColor(ResourceData data) {
   if (data.type.length < 2) {
     if (data.type.contains("Oxygen"))
-      return [resPurple1, resPurple2];
+      return [secondaryColor, primaryColor];
     else if (data.type.contains("Hospital Beds"))
-      return [resPink1, resPink2];
+      return [resGreen1, resGreen2];
     else
       return [resPeach1, resPeach2];
   } else
