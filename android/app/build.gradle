@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.arkapp.covid_resources"
+        applicationId "com.arkapp.nearbyresources"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()

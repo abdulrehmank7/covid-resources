@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      title: 'Covid Resources',
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );

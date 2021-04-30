@@ -134,10 +134,10 @@ class ResourceWidget extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: MaterialButton(
-                  shape: CircleBorder(side: BorderSide(width: 2, color: colors[1], style: BorderStyle.solid)),
+                  shape: CircleBorder(side: BorderSide(width: 2, color: colors[0], style: BorderStyle.solid)),
                   onPressed: () {
                     Share.share(
-                      'COVID Help Details\n\n${resourceData.type}\n${resourceData.name}\n${resourceData.phone}\n${resourceData.city}\n${resourceData.description}\n${resourceData.address}',
+                      'Help Details\n\n${resourceData.type}\n${resourceData.name}\n${resourceData.phone}\n${resourceData.city}\n${resourceData.description}\n${resourceData.address}',
                     );
                   },
                   child: Icon(
@@ -150,7 +150,7 @@ class ResourceWidget extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: MaterialButton(
-                  shape: CircleBorder(side: BorderSide(width: 2, color: colors[1], style: BorderStyle.solid)),
+                  shape: CircleBorder(side: BorderSide(width: 2, color: colors[0], style: BorderStyle.solid)),
                   onPressed: () {
                     if (resourceData.phone.isNotEmpty) callPhone(resourceData.phone);
                   },

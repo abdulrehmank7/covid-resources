@@ -1,4 +1,4 @@
-package com.arkapp.covid_resources
+package com.arkapp.nearbyresources
 
 import io.flutter.embedding.android.FlutterActivity
 
